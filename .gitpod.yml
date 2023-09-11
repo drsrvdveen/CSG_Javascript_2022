@@ -1,8 +1,13 @@
 image:
   file: .gitpod.Dockerfile
+ports:
+  - name: Web App
+    description: The main application web server
+    port: 8080
+    onOpen: open-browser
 tasks:
   - name: IF server
-    command: python3 -m http.server 8080
+    command: python3 -m http.server 3000
 github:
   prebuilds:
     master: true

@@ -48,13 +48,9 @@ function setup() {
 
 function draw() {
   background(achtergrond);
-
   if (keyIsPressed) {
     background('black');
   }
-
   cirkel.controleerRaak();
   cirkel.teken();
-
-  text(cirkel.aantalRaak,10,50);
 }

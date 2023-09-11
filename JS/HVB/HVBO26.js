@@ -12,6 +12,10 @@ class Levels {
     this.afgelopen = null;
     this.gewonnen = null;
     this.alfa = 0.5;
+    this.R = null;
+    this.G = null;
+    this.B = null;
+    this.antwoord = null;
   }
   
   nieuwSpel() {
@@ -25,6 +29,14 @@ class Levels {
   nieuwLevel() {
     this.level++;
     this.levelGehaald = false;
+    this.geneerOpgave();
+  }
+
+  geneerOpgave() {
+    this.R = random(0,256);
+    this.G = random(0,256);
+    this.B = random(0,256);
+    this.antwoord = floor(random(0,4));
   }
 
   update() {
@@ -37,8 +49,13 @@ class Levels {
    tekenAnimatie() {
     push();
     noStroke();
-    fill(120,130,150,this.alfa);
-    rect(10,10,880,580);
+    for (var v = 0; v < 4; v++) {
+      fill(this.R,this.G,this.B);
+      if (v == this.antwoord) {
+        fill(this.R,this.G,this.B+this.verschil);
+      }
+      rect(v*100+200,100,50,50);
+    }
     pop();
   }
 

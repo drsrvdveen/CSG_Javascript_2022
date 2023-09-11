@@ -17,6 +17,6 @@ function setup() {
 }
 
 function draw() {
-    text("aantal elementen "+namen.length,10,30);
+    text("aantal elementen "+namen[1],10,30);
     teller++;
 }

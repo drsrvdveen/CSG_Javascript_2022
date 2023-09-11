@@ -1,5 +1,7 @@
 var instructieTekst = "uitleg functies";
 
+var invoer;
+
 function setup() {
     canvas = createCanvas(450,450);    
     canvas.parent('processing');
@@ -8,25 +10,28 @@ function setup() {
 
 function draw() {
     background('silver');
-    tekenIets(mouseX);
+    invoer = mouseX - width / 2;
+    tekenIets(invoer);
     fill(0);
-    text("invoer = "+mouseX+" uitvoer="+berekenIets(mouseX),25,25);
+    // text("invoer = "+invoer+" uitvoer = "+berekenIets(invoer),25,25);
+    text("invoer = "+invoer+" uitvoer = ",25,25);
     textSize(25);
 }
 
+
+
+
 function tekenIets(invoer) {
-    var schaal = invoer / width;
     push();
     translate(width/2,height/2);
-    noStroke();
+    stroke('lightgreen');
+    strokeWeight(5);
     fill('green');
-    ellipse(0,0,schaal * width/2);
-    fill('lightgreen');
-    ellipse(0,0,schaal * width/3);
+    ellipse(0,0,invoer*2);
     pop();
 }
 
 function berekenIets(invoer) {
-    var uitvoer = invoer*invoer - invoer;
+    var uitvoer = invoer*invoer;
     return uitvoer;
 }

@@ -8,15 +8,14 @@ function setup() {
 function draw() {
     background('silver');
     translate(0,height/2);
-    // 1x
-    translate(50,0);
-    tekenIets();
-/*
-    for (var nummer = 0; nummer < 8; nummer++) {
+    // for-loop
+    for (var x = 0; x < 5 ; x++ ) {
+        // wat moet er gebeuren
         translate(50,0);
         tekenIets();
     }
-*/
+
+
 }
 
 function tekenIets() {
@@ -32,3 +31,11 @@ function tekenIets() {
     ellipse(0,0,20);    
     pop();
 }
+
+
+/*
+    for (var nummer = 0; nummer < 8; nummer++) {
+        translate(50,0);
+        tekenIets();
+    }
+*/
