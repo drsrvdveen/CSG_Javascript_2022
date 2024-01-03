@@ -30,7 +30,6 @@ var piraat = {
 
 function setup() {
   canvas = createCanvas(450,450);
-  textSize(30);
   canvas.parent('processing');
 }
 

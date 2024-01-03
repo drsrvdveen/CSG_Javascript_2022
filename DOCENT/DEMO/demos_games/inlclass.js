@@ -3,8 +3,8 @@ var instructieTekst = "Inleiding van object naar klasse";
 class Piraat {
     // attributen
     constructor() {
-        this.x = random(25,100);
-        this.y = random(25,100);
+        this.x = random(150,width - 150);
+        this.y = random(150,height - 150);
         this.sprite = null;
     }
 
@@ -14,7 +14,7 @@ class Piraat {
         this.y += random(-5,5);
     }
     teken() {
-        image(this.sprite,this.x,this.y);
+        image(this.sprite,this.x,this.y,150,150);
     }
 }
 
@@ -30,13 +30,13 @@ var piraat = {
     this.y += random(-5,5);
  },
  teken() {
-    image(this.sprite,this.x,this.y);
+    image(this.sprite,this.x,this.y,150,150);
  }
 };
 
 function preload() {
   pirate = loadImage("../images/sprites/pirate.svg");
-  ninja = loadImage("../images/sprites/ninja.png");
+  padvinder = loadImage("../images/sprites/padvinder.png");
 }
 
 function setup() {
@@ -48,7 +48,7 @@ function setup() {
 }
 
 function draw() {
-    background(255);
+    background('whitesmoke');
     piraat.beweeg();
     piraat.teken();
 }

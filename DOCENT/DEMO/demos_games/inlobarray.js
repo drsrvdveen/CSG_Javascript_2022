@@ -1,4 +1,4 @@
-var instructieTekst = "Inleiding objectnotatie (gebruik console)";
+var instructieTekst = "Inleiding array van objecten (gebruik console)";
 
 class Piraat {
   constructor(s) {
@@ -13,7 +13,7 @@ class Piraat {
  }
 
  teken() {
-    image(this.sprite,this.x,this.y);
+    image(this.sprite,this.x,this.y,50,50);
  }
 }
 
@@ -22,7 +22,7 @@ function preload() {
   sprite = loadImage("../images/sprites/pirate.svg");
 }
 
-var aantal = 10;
+var aantal = 200;
 var piratenLijst = [];
 
 function setup() {
@@ -39,7 +39,7 @@ function setup() {
 }
 
 function draw() {
-    background('green');
+    background('whitesmoke');
     // piraat.beweeg();
     // piraat.teken();
     for (var p = 0; p < aantal;p++) {

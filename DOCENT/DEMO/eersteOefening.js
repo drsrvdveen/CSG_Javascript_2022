@@ -8,12 +8,12 @@ function setup() {
 }
 
 function draw() {
-  background('white');
+  background('gold');
   noStroke();
-  fill('grey');
+  fill('dodgerblue');
   triangle(10,20,430,440,10,440);
   triangle(20,10,440,430,440,10);
-  fill('black');
+  fill('white');
   rect(10,230,210,210);
   rect(230,10,210,210);
   if (zichtbaar) {
