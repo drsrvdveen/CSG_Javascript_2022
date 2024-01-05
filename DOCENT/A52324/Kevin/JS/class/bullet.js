@@ -32,20 +32,20 @@ benGeraakt(man) {
 
 class Kogel_B extends Kogel {
   constructor(x, y, man) {
-    super(x, y, man);
+    super(x, y, man );
     this.doelX = man.x  + man.width / 2;
     this.doelY = man.y  + man.height / 2;
     this.man = man;
   }
 
   beweeg() {
-    const deltaX = this.doelX  - this.x;
-    const deltaY = this.doelY  - this.y;
+    const deltaX =  this.doelX - this.x;
+    const deltaY =  this.doelY  - this.y;
 
     const hoek = Math.atan2(deltaY, deltaX) ;
 
-    this.x += this.verplaatsing * Math.cos(hoek);
-    this.y += this.verplaatsing * Math.sin(hoek);
+    this.x += this.verplaatsing * Math.cos(2 * hoek);
+    this.y += this.verplaatsing * Math.sin(2 * hoek);
 
   }
 }

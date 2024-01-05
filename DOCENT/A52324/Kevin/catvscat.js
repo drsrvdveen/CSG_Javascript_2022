@@ -1,39 +1,34 @@
 var p;
-var enemies = [];
-var begin = true;
-var afgelopen = false;
-
-var level = 1;
-var benodigde_punten_lv = 5;
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent('processing');
   p = new Man();
-  frameRate(60); 
-  }
+  game = new Game();
+  game.Maak_enemies(); 
+  game.Intervals();
+  game.preload();
+  frameRate(60);
+}
+
 
 function draw() {
-  update(); 
-  teken();
-  if (begin === false && afgelopen === false) {
-    background('orange');
-    
+  game.teken();
+  game.update();
+  if (game.begin === true || game.afgelopen === true) {
+   game.mousePressed(); 
+  }
+  
+
+  if (game.actief) {
     p.teken();
     p.beweeg();
     p.toonKogels();
+    p.schiet();
 
     for (var i = 0; i < enemies.length; i++) {
       enemies[i].teken();
       enemies[i].toonKogels();
-
-      
     }
   }
-  
 }
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
-
